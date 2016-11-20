@@ -36,7 +36,12 @@ switch(led) {
     case .two:
         gp2.value = 1
         gp1.value = 0
-    default:()
+    case .blink:
+	while true {
+    		gp1.value = gp1.value == 0 ? 1 : 0
+    		gp2.value = gp2.value == 0 ? 1 : 0
+    		usleep(200*1000)
+	}	
 }
 }
 
