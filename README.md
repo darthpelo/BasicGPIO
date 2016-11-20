@@ -23,3 +23,10 @@ enum Command: Int {
 }
 ```
 ![running](https://github.com/darthpelo/BasicGPIO/blob/master/images/2016-11-20%2012.01.48.gif)
+
+### Credits & References
+Thanks to @uraimo and @iachievedit for the help to setup properly Swift and SwiftGPIO on my RPi.
+- [Swift 3.0 on Raspberry Pi 2 and 3](http://dev.iachieved.it/iachievedit/swift-3-0-on-raspberry-pi-2-and-3/)
+- [SwiftGPIO](https://github.com/uraimo/SwiftyGPIO)
+- SwiftGPIO [examples](https://github.com/uraimo/SwiftyGPIO/tree/master/Examples)
+- Trubles with RPi, Ubuntu and eth0? [👉solution](https://medium.com/@darthpelo/raspberry-pi-ubuntu-and-the-missed-eth0-58f134aa961e#.diid7xp7x) 
