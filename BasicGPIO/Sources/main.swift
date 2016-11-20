@@ -47,10 +47,3 @@ switch(led) {
 
 switchOn(led: Command(rawValue:led!))
 
-/*
-while true {    
-    gp1.value = gp1.value == 0 ? 1 : 0
-    gp2.value = gp2.value == 0 ? 1 : 0
-    usleep(200*1000)
-}
-*/
