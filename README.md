@@ -1,5 +1,6 @@
 # BasicGPIO
 This is a simple example to show how to use [SwiftGPIO](https://github.com/uraimo/SwiftyGPIO) by @uraimo on a Raspberry Pi 2.
+The purpose is very simple: swicth on/off or blink 3 leds conected to the RPi with two different GPIO.
 
 ## Board
 Raspberry connections
