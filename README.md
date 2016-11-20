@@ -22,3 +22,4 @@ enum Command: Int {
     case blink
 }
 ```
+![running](https://github.com/darthpelo/BasicGPIO/blob/master/images/2016-11-20%2012.01.48.gif)
