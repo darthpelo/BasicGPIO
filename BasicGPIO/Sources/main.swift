@@ -5,6 +5,7 @@ enum Command: Int {
     case one
     case two
     case blink
+    case button
 }
 
 guard CommandLine.arguments.count == 2 else {
@@ -41,8 +42,13 @@ switch(led) {
     		gp1.value = gp1.value == 0 ? 1 : 0
     		gp2.value = gp2.value == 0 ? 1 : 0
     		usleep(200*1000)
-	}	
-}
+	}
+    case .button:
+       gp1.direction = .IN
+       while true {
+           print(gp1.value)
+       }
+       }
 }
 
 switchOn(led: Command(rawValue:led!))
