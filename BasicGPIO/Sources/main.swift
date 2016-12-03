@@ -13,7 +13,28 @@ guard CommandLine.arguments.count == 2 else {
     exit(-1)
 }
 
-let led = Int(CommandLine.arguments[1])
+private func setupOUT() {
+    let gpios = SwiftyGPIO.GPIOs(for:.RaspberryPi2)
+    
+    let gp1 = gpios[.P17]!
+    let gp2 = gpios[.P18]!
+    
+    gp1.direction = .OUT
+    gp2.direction = .OUT
+    
+    gp1.value = 0
+    gp2.value = 0
+}
+
+private func setupIN() {
+    let gpios = SwiftyGPIO.GPIOs(for:.RaspberryPi2)
+    
+    let gp1 = gpios[.P17]!
+    let gp2 = gpios[.P18]!
+    
+    gp1.direction = .IN
+    gp2.direction = .IN
+}
 
 func switchOn(led: Command?) {
     guard let led = led else {
@@ -45,27 +66,7 @@ func switchOn(led: Command?) {
     }
 }
 
+let led = Int(CommandLine.arguments[1])
+
 switchOn(led: Command(rawValue:led!))
 
-private func setupOUT() {
-    let gpios = SwiftyGPIO.GPIOs(for:.RaspberryPi2)
-    
-    let gp1 = gpios[.P17]!
-    let gp2 = gpios[.P18]!
-    
-    gp1.direction = .OUT
-    gp2.direction = .OUT
-    
-    gp1.value = 0
-    gp2.value = 0
-}
-
-private func setupIN() {
-    let gpios = SwiftyGPIO.GPIOs(for:.RaspberryPi2)
-    
-    let gp1 = gpios[.P17]!
-    let gp2 = gpios[.P18]!
-
-    gp1.direction = .IN
-    gp2.direction = .IN
-}
