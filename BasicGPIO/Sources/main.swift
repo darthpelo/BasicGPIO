@@ -63,8 +63,8 @@ func switchOn(led: Command?) {
     case .button:
         setupIN()
         while true {
-            print(gp1?.value)
-            usleep(10*1000) // 10ms
+            print(gp2?.value)
+            usleep(100*1000) // 100ms
         }
     }
 }
