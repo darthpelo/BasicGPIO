@@ -19,8 +19,8 @@ guard CommandLine.arguments.count == 2 else {
 private func setupOUT() {
     let gpios = SwiftyGPIO.GPIOs(for:.RaspberryPi2)
     
-    gp1 = gpios[.P17]!
-    gp2 = gpios[.P18]!
+    gp1 = gpios[.P20]!
+    gp2 = gpios[.P26]!
     
     gp1?.direction = .OUT
     gp2?.direction = .OUT
@@ -63,8 +63,10 @@ func switchOn(led: Command?) {
     case .button:
         setupIN()
         while true {
-            print(gp2?.value)
-            usleep(100*1000) // 100ms
+            if let value = gp2?.value {
+                print(value)
+                usleep(100*1000) // 100ms
+            }
         }
     }
 }
